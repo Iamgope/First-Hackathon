@@ -33,7 +33,7 @@ def upload(request):
 def category(request):
     return render(request,'categories.html')
 
-def item_desc(request):
+def item_desc(request, item_id):
     item = get_object_or_404(Item, pk=item_id)
     return render(request, 'item_description.html', { 'item': item })
     # else:
