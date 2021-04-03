@@ -1,25 +1,27 @@
+<!DOCTYPE html>
 {% load socialaccount %}
 {% load static %}
-    <html>
-    <head>
+
+<html>
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">     
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet'
+        href='https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.9.1/css/OverlayScrollbars.min.css'>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/bulma-modal-fx/dist/css/modal-fx.min.css" />
     <title>{% block title %}
       
     {% endblock title %}</title>
-     <style>
-         .footer{
-             margin-top: 100px;
-         }
-        
-     </style>
+    
 </head>
 
 <body>
     
-    <nav class="navbar is-fixed-top">
+    <nav class="navbar">
         <div class="navbar-brand">
           <a class="navbar-item" href="{% url 'home'%}">
               <p>Logo-dena hai</p>
@@ -38,43 +40,44 @@
                 <p class="control">
                     <a class="button is-danger  is-outlined" href="#">
                         <span>Explore</span>
-                      </a>
+                    </a>
                 </p>
                 <p class="control">
-                  <a class="button is-link  is-outlined" href="/upload/">
-                    <span>Share</span>
-                  </a>
+                    <a class="button is-link  is-outlined" href="/upload/">
+                        <span>Share</span>
+                    </a>
                 </p>
-               
-                <p class="control">
-                  <a class="button is-link  is-outlined" href="#">
-                    {% if user.is_authenticated %}
-                    <span>Logout</span>
-                    {% else %}
-                    <a href="{% provider_login_url 'google' %}">Login with google</a>
-                     {% endif %}
-                  </a>
-                </p>
-               
-
+                {% if user.is_authenticated %}
+                    <figure class="image">
+                        <img class="is-rounded" src="https://lh3.googleusercontent.com/a-/AOh14Ggdx2ijx3DAOPnoC0wixIHJTCYPJ8ygFCM189s4=s96-c">
+                    </figure>
+                    <p class="control">
+                        <a class="button is-link  is-outlined" href="#">
+                            <span>Logout</span>
+                        </a>
+                    </p>
+                {% else %}
+                    <p class="control">
+                        <a class="button is-link  is-outlined" href="{% provider_login_url 'google' %}">
+                            <span>Login with Google</span>
+                        </a>
+                    </p>
+                {% endif %}
               </div>
             </div>
           </div>
         </div>
       </nav>
-<br/><br/><br/>
+
     {% block content %}
 
-      {% endblock content %}
+    {% endblock content %}
 
+    <footer class="footer ">
+    
+    </footer>
 
-      <footer class="footer ">
-       
-      </footer>
-
-
-
-
+<!-- Scripts -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
 
