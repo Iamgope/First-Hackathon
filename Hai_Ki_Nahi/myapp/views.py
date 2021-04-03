@@ -24,3 +24,7 @@ def upload(request):
     else:
         form = ItemForm()
         return render(request,'upload.html',{'form':form})
+
+
+def item_desc(request):
+    return render(request,'item_description.html')
