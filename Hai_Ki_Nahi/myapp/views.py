@@ -15,9 +15,9 @@ def upload(request):
         form = ItemForm(request.POST,request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('home')
+            return redirect('myapp:home')
         else:
-            return redirect('dashboard')
+            return redirect('myapp:dashboard')
     else:
         form = ItemForm()
         return render(request,'upload.html',{'form':form})
