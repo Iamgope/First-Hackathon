@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models.deletion import CASCADE
 class Item(models.Model):
     tags = [('choice1','Books'),('choice2','Instruments'),('choice3','Bikes'),('choice4','Clothes'),]
     username = models.ForeignKey(User,on_delete=models.CASCADE)
@@ -12,5 +13,5 @@ class Item(models.Model):
         return self.item_name
 
 class UserDetail(models.Model):
-    lended = models.ManyToManyField(to=Item)
+    lended = models.OneToOneField(to=Item, on_delete=models.CASCADE)
     phone =  models.PositiveIntegerField()

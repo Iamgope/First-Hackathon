@@ -1,7 +1,9 @@
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect, render,get_object_or_404
 from myapp.forms import ItemForm
 from django.contrib import messages
 from .models import *
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import login,authenticate,logout
 # Create your views here.
 
 def home(request):
@@ -10,13 +12,19 @@ def home(request):
 def dashboard(request):
     return render(request,'dashboard.html')
 
+@login_required
 def upload(request):
+    
     if request.method == 'POST':
-        form = ItemForm(request.POST,request.FILES)
+        form = ItemForm(request.POST,request.FILES,instance=request.user)
         if form.is_valid():
-            form.save()
+            f = form.save(commit=False)
+            f.username = request.user.username
+            f.save()
+            print("all done correct")
             return redirect('myapp:home')
         else:
+            print("somtihng wrong")
             return redirect('myapp:dashboard')
     else:
         form = ItemForm()
