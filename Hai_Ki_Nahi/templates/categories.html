@@ -1,0 +1,99 @@
+{%extends 'base.html'%}
+<!-- Title -->
+{% block title %}
+Categories
+{% endblock title%}
+
+<!-- Content -->
+{% block content %}
+
+	<section class="hero is-info is-small">
+		<div class="hero-body">
+			<div class="container has-text-centered">
+				<p class="title">
+					Categories
+				</p>
+			</div>
+		</div>
+	</section>
+	<div class="box cta">
+		<p class="has-text-centered">
+			Browse through the available categories and tags for all the available items.
+		</p>
+	</div>
+	<section class="section">
+		<div class="container">
+			<div class="columns is-multiline">
+				<div class="column is-half">
+					<article class="notification media has-background-white">
+						<figure class="media-left">
+							<span class="icon">
+								<i class="has-text-warning fa fa-book fa-lg"></i>
+							</span>
+						</figure>
+						<div class="media-content">
+							<div class="content">
+								<h1 class="title is-size-4">Books</h1>
+								<p class="is-size-5 subtitle">
+									See, what is available to <strong>read</strong>
+								</p>
+							</div>
+						</div>
+					</article>
+				</div>
+				<div class="column is-half">
+					<article class="notification has-background-white media">
+						<figure class="media-left">
+							<span class="icon has-text-info">
+								<i class="fa fa-lg fa-music"></i>
+							</span>
+						</figure>
+						<div class="media-content">
+							<div class="content">
+								<h1 class="title is-size-4">Musical Instruments</h1>
+								<p class="is-size-5 subtitle">
+									Try hands on <strong>music</strong>
+								</p>
+							</div>
+						</div>
+					</article>
+				</div>
+				<div class="column is-half">
+					<article class="notification has-background-white media">
+						<figure class="media-left">
+							<span class="icon has-text-grey">
+								<i class="fa fa-lg fa-users"></i>
+							</span>
+						</figure>
+						<div class="media-content">
+							<div class="content">
+								<h1 class="title is-size-4">Clothes</h1>
+								<p class="is-size-5 subtitle">
+									An <strong>easy-to-read</strong> naming system designed for humans
+								</p>
+							</div>
+						</div>
+					</article>
+				</div>
+				<div class="column is-half">
+					<article class="notification has-background-white media">
+						<figure class="media-left">
+							<span class="icon has-text-primary">
+								<i class="fa fa-lg fa-bicycle"></i>
+							</span>
+						</figure>
+						<div class="media-content">
+							<div class="content">
+								<h1 class="title is-size-4">Bike</h1>
+								<p class="is-size-5 subtitle">
+									Pick a <strong>cycle</strong> and span the campus
+								</p>
+							</div>
+						</div>
+					</article>
+				</div>
+			</div>
+		</div>
+	</section>
+
+{% endblock content %}
