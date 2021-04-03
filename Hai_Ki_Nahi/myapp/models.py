@@ -1,5 +1,5 @@
 from django.db import models
-from .models import User
+from django.contrib.auth.models import User
 # Create your models here.
 class Item(models.Model):
     username = models.ForeignKey(User,on_delete=models.CASCADE)

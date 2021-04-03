@@ -32,14 +32,14 @@ ALLOWED_HOSTS = ['*',]
 # Application definition
 
 INSTALLED_APPS = [
-    'myapp',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites',  
+    'django.contrib.sites', 
+    'myapp', 
     'allauth',  
     'allauth.account',  
     'allauth.socialaccount',   
@@ -73,6 +73,10 @@ TEMPLATES = [
         },
     },
 ]
+AUTHENTICATION_BACKENDS = (
+ 'django.contrib.auth.backends.ModelBackend',
+ 'allauth.account.auth_backends.AuthenticationBackend',
+ )
 
 WSGI_APPLICATION = 'Hai_Ki_Nahi.wsgi.application'
 
@@ -105,10 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-AUTHENTICATION_BACKENDS = (
- 'django.contrib.auth.backends.ModelBackend',
- 'allauth.account.auth_backends.AuthenticationBackend',
- )
+ 
 
 
 # Internationalization
@@ -133,5 +134,16 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,'static'),]
 
 MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-SITE_ID = 1
+SITE_ID = 2
 LOGIN_REDIRECT_URL = '/'
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        }
+    }
+}
