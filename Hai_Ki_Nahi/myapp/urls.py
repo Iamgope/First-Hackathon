@@ -10,4 +10,6 @@ urlpatterns = [
     path('upload/',views.upload, name = 'upload'),
     path('categories/', views.category, name = 'category'),
     path('item_des/',views.item_desc, name = 'description'),
+    path('categories/books',views.books, name = 'books'),
+
 ]
