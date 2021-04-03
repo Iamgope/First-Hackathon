@@ -4,4 +4,5 @@ from myapp import views
 urlpatterns = [
     path('',views.home,name = 'home'),
     path('dashboard/', views.Dashboard, name='dashboard'),
+    path('upload/',views.upload,name= 'upload'),
 ]
