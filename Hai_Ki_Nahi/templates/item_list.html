@@ -1,7 +1,16 @@
 {%extends 'base.html'%}
 
 {%block content%}
-<h1>{{type}}</h1>
+
+
+<section class="section is-medium has-text-left has-background-white-ter">
+    <h1 class="title is-size-1">{{type}}</h1>
+    <h2 class="subtitle is-">
+     see what fits you! 
+    </h2>
+  </section>
+
+
 {%for i in items%}
 <h1>{{i.item_name}}</h1>
 {%endfor%}

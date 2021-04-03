@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>KIDS</title>
+    <script type="text/javascript" src="./jqery/jqery.min.js"></script>
+    <style media="screen">
+    body{
+      padding: 0;
+      margin: 0;
+    }
+      #items{
+        margin-left: 5%;
+        margin-right: 5%;
+      }
+      #items div.to-show{
+        width: 30%;
+        float: left;
+        margin-left: 10px;
+        outline: solid red 2px;
+        padding: 2px;
+      }
+      .to-show img{
+        width: 50%;
+        float: left;
+        padding-right: 10px;
+      }
+      .to-show p.description{
+        width: 40%;
+        float: left;
+      }
+      .description a{
+        text-decoration: none;
+        font-size: 18px;
+      }
+
+      #next-prev{
+        margin: 0 20%;
+        padding-top: 50px;
+      }
+
+      #prev-button{
+        float: left;
+      }
+      #next-button{
+        float: right;
+      }
+      .not-to-show{
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body>
+
+    <main>
+
+
+
+    </main>
+
+    <div id="items">
+      <div class="to-show">
+        <img src="book.jfif" alt=""></img>
+        <p class="description">
+          <a href="">Book Name 1</a>
+        </p>
+      </div>
+
+      <div class="to-show">
+        <img src="book.jfif" alt="">
+        <p class="description"><a href="">Book Name 1</a></p>
+      </div>
+      <div class="to-show">
+        <img src="book.jfif" alt="">
+        <p class="description"><a href="">Book Name 2</a></p>
+      </div>
+      <div class="to-show">
+        <img src="book.jfif" alt="">
+        <p class="description"><a href="">Book Name 3</a></p>
+      </div>
+      <div class="to-show">
+        <img src="book.jfif" alt="">
+        <p class="description"><a href="">Book Name 4</a></p>
+      </div>
+      <div class="to-show">
+        <img src="book.jfif" alt="">
+        <p class="description"><a href="">Book Name 5</a></p>
+      </div>
+      <div class="to-show">
+        <img src="book.jfif" alt="">
+        <p class="description"><a href="">Book Name 6</a></p>
+      </div>
+      <div class="to-show">
+        <img src="book.jfif" alt="">
+        <p class="description"><a href="">Book Name 7</a></p>
+      </div>
+
+      <div class="to-show">
+        <img src="book.jfif" alt="">
+        <p class="description"><a href="">Book Name 8</a></p>
+      </div>
+
+      <div class="not-to-show">
+        <img src="book2.jfif" alt="">
+        <p class="description"><a href="">Book name 1</a></p>
+      </div>
+      <div class="not-to-show">
+        <img src="book2.jfif" alt="">
+        <p class="description"><a href="">Book name 2</a></p>
+      </div>
+      <div class="not-to-show">
+        <img src="book2.jfif" alt="">
+        <p class="description"><a href="">Book name 3</a></p>
+      </div>
+      <div class="not-to-show">
+        <img src="book2.jfif" alt="">
+        <p class="description"><a href="">Book name 4</a></p>
+      </div>
+      <div class="not-to-show">
+        <img src="book2.jfif" alt="">
+        <p class="description"><a href="">Book name 5</a></p>
+      </div>
+      <div class="not-to-show">
+        <img src="book2.jfif" alt="">
+        <p class="description"><a href="">Book name 6</a></p>
+      </div>
+      <div class="not-to-show">
+        <img src="book2.jfif" alt="">
+        <p class="description"><a href="">Book name 7</a></p>
+      </div>
+      <div class="not-to-show">
+        <img src="book2.jfif" alt="">
+        <p class="description"><a href="">Book name 8</a></p>
+      </div>
+      <div class="not-to-show">
+        <img src="book2.jfif" alt="">
+        <p class="description"><a href="">Book name 9</a></p>
+      </div>
+
+    </div>
+
+    <div id="next-prev" style="clear:both;">
+      <button id="prev-button" type="button">Previous</button>
+      <button type="button" id="next-button">Next</button>
+    </div>
+
+    <script>
+
+     $("#next-button").click(function (){
+       $(".to-show").addClass("prev");
+       $(".to-show").addClass("not-to-show");
+     });
+
+    </script>
+
+  </body>
+</html>
