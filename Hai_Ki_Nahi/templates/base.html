@@ -1,3 +1,4 @@
+{% load socialaccount %}
     <html>
     <head>
     <meta charset="UTF-8">
@@ -43,6 +44,18 @@
                     <span>Share</span>
                   </a>
                 </p>
+               
+                <p class="control">
+                  <a class="button is-link  is-outlined" href="#">
+                    {% if user.is_authenticated %}
+                    <span>Logout</span>
+                    {% else %}
+                    <a href="{% provider_login_url 'google' %}">Login with google</a>
+                     {% endif %}
+                  </a>
+                </p>
+               
+
               </div>
             </div>
           </div>
