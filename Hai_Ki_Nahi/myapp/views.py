@@ -26,7 +26,10 @@ def category(request):
     return render(request,'categories.html')
 
 def item_desc(request):
-    return render(request,'item_description.html')
+    item = get_object_or_404(Item, pk=item_id)
+    return render(request, 'item_description.html', { 'item': item })
+    # else:
+    #     return redirect('myapp:dashboard')
 
 def books(request):
     items=Item.objects.filter(Tag="choice1")
