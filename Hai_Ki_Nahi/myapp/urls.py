@@ -11,5 +11,11 @@ urlpatterns = [
     path('categories/', views.category, name = 'category'),
     path('item_des/',views.item_desc, name = 'description'),
     path('categories/books',views.books, name = 'books'),
+    path('categories/clothes',views.clothes, name = 'clothes'),
+    path('categories/bike',views.bike, name = 'bike'),
+    path('categories/music',views.music, name = 'music'),
+
+
+
 
 ]
