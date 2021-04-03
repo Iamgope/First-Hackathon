@@ -1,0 +1,61 @@
+{%extends 'base.html'%}
+
+{%block content%}
+
+<style>
+    .items{
+        margin-top: 10px;
+        font-weight: bold;
+    }
+    img{
+      margin-bottom: 60px; 
+    }
+    .is-is-size-6{
+         font-weight: 900;
+    }
+
+@media screen and (min-width: 768px) {
+  body {
+    padding-top: calc(3.25rem + 20px);
+  }
+
+ 
+  .hero.is-fullheight {
+    min-height: calc(100vh - 6.5rem - 40px);
+  }
+ 
+}
+.status{
+   color:green
+  }
+</style>
+<section class="hero is-fullheight">
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <div class="columns is-8 is-variable ">
+                <div class="column is-half has-text-left">
+                    <h1 class="title is-1">ITEM NAME</h1><p class="status">AVAILABLE</p>
+                    <p class="is-size-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla eligendi soluta
+                        voluptate facere molestiae consequatur.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla eligendi soluta
+                        voluptate facere molestiae consequatur.
+                    </p>
+                    <div class="items">
+                       <p>ITEM BY: AMAN GOPE</p> 
+                       <p>amangope@gmail.com</p>
+                        
+                    </div>
+                </div>
+                <div class="column is-one-third has-text-left">
+                  
+                      <img src="../media/images/chai.jpg">
+                    
+                    <div class="control">
+                        <button type="submit" class="button is-link is-fullwidth has-text-weight-medium is-medium">Request Item</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{%endblock%}

@@ -24,3 +24,6 @@ def upload(request):
 
 def category(request):
     return render(request,'categories.html')
+
+def item_desc(request):
+    return render(request,'item_description.html')
