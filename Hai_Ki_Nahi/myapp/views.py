@@ -11,15 +11,13 @@ def Dashboard(request):
 
 
 def upload(request):
-    uploaded  = False
     if request.method == 'POST':
         itemform = ItemForm(request.POST)
         if itemform.is_valid():
             itemform.save(commit=True)
-            uploaded = True
-            messages.info(request,"you have uploaded your belongings successfully !!")
             return redirect('home')
+        else:
+            print('some error')
 
 
-
-    return render(request,'upload.html',{'itemform':ItemForm,'uploaded':uploaded})
+    return render(request,'upload.html',{'itemform':ItemForm})
