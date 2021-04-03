@@ -5,7 +5,7 @@ class Item(models.Model):
     username = models.ForeignKey(User,on_delete=models.CASCADE)
     item_name = models.CharField(max_length=100)
     item_desc = models.CharField(max_length=300)
-    item_img = models.ImageField()
+    item_img = models.ImageField(upload_to='images/')
     Tag = models.CharField(max_length=100,choices=tags)
 
     def __str__(self):
