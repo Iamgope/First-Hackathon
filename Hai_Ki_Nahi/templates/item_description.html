@@ -17,13 +17,21 @@
 .status{
    color:green
   }
+  .status-00{
+   color:red
+  }
 </style>
 <section class="hero is-fullheight">
     <div class="hero-body">
         <div class="container has-text-centered">
             <div class="columns is-8 is-variable ">
                 <div class="column is-half has-text-left">
-                    <h1 class="title is-1">ITEM NAME</h1><p class="status">AVAILABLE</p>
+                    {%if item.Available%}
+                    <h1 class="title is-1">{{item.item_name}}</h1><p class="status-01">AVAILABLE</p>
+
+                    {%else%}
+                    <h1 class="title is-1">{{item.item_name}}</h1><p class="status-00">Unavailable</p>
+                    {%endif%}
                     <p class="is-size-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla eligendi soluta
                         voluptate facere molestiae consequatur.
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla eligendi soluta
@@ -38,11 +46,19 @@
                 <div class="column is-one-third has-text-left">
                   
                       <img src="../media/images/chai.jpg">
-                    
-                    <div class="control">
-                        <button type="submit" class="button is-link is-fullwidth has-text-weight-medium is-medium">Request Item</button>
-                    </div>
+                      <form action="" method="post">
+                        {% csrf_token %}
+                      <div class="control">
+                        <button type="submit" class="button is-link is-fullwidth has-text-weight-medium is-medium">
+                            {%if item.Available%}
+                            Request Item
+                            {%else%}
+                            Sorry :(
+                            {%endif%}
+
+                        </button>
                 </div>
+            </form>
             </div>
         </div>
     </div>

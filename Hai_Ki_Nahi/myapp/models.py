@@ -7,7 +7,7 @@ class Item(models.Model):
     item_desc = models.CharField(max_length=300)
     item_img = models.ImageField(upload_to='images/')
     Tag = models.CharField(max_length=100,choices=tags)
-
+    Available=models.BooleanField(default=True)
     def __str__(self):
         return self.item_name
 
